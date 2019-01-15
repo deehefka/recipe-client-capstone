@@ -12,6 +12,89 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
-    </body>
-</html>
+      <h1>Recipe Cards</h1>
+
+           <!-- sign-up button - from class notes/lecture-->
+           <form id="sign-up" class="border">
+                    <fieldset>
+                      <legend>Sign up!</legend>
+                      <input type="text" name="credentials[email]" placeholder="Email">
+                      <input type="password" name="credentials[password]" placeholder="Password" >
+                      <input type="password" name="credentials[password_confirmation]"
+                             placeholder="Confirm Password">
+                      <input type="submit" value="Sign up!"/>
+                    </fieldset>
+           </form>
+
+           <!-- sign-in button - from class notes/lecture-->
+           <form id="sign-in" class="border">
+                   <fieldset>
+                     <legend> Sign In!</legend>
+                     <input type="text" name="credentials[email]" placeholder="Email" />
+                     <input type="password" name="credentials[password]" placeholder="Password">
+                     <input type="submit" value="Sign In!">
+                   </fieldset>
+           </form>
+
+           <!-- change pass button - from class notes/lecture-->
+           <form id="change-password" class="border" hidden>
+              <fieldset>
+                <legend>Change password!</legend>
+                <input type="password" name="passwords[old]" placeholder="Old password">
+                <input type="password" name="passwords[new]" placeholder="New password">
+                <input type="submit" value="Change password!">
+              </fieldset>
+           </form>
+
+           <!-- sign-out button - from class notes/lecture-->
+           <form id="sign-out" class="border" hidden>
+                   <fieldset>
+                     <legend> Sign Out!</legend>
+                     <input type="submit" value="Sign Out!">
+                   </fieldset>
+           </form>
+
+           <h3 id="message"></h3>
+
+           <!-- <div class="container">
+             <form id="recipe-index" hidden>
+               <fieldset>
+                   <input type="submit" class="btn btn-primary" value="Show all Recipes" id="showButton">
+               </fieldset>
+             </form> -->
+
+             <!-- <h2 id="recipes" class="text-center" hidden>My Recipes</h2>
+                 <form id="recipe-create" class="col-8 mx-auto" hidden>
+                 <div id="output" hidden></div>
+                 <fieldset>
+                   <input type="text" name="recipe[title]" placeholder="What do you need to do?" class="col - 8 mx-auto" id="title">
+                   <input type="text" name="recipe[description]" placeholder="Give me details..."class="col - 8 mx-auto" id="description">
+                   <input type="submit" class="btn btn-primary" value="Create a Recipe" id="addTaskButton">
+                 </fieldset>
+               </form> -->
+
+               <!-- <form id="recipe-show" hidden>
+                 <fieldset>
+                   <input type="text" name="recipe[id]" placeholder="Recipe ID" id="show-recipe[id]">
+                   <input type="submit" class="btn btn-primary" value="Show one Recipe">
+                 </fieldset>
+               </form> -->
+
+               <!-- <form id="recipe-update" hidden>
+                 <fieldset>
+                   <input type="text" name="recipe[title]" placeholder="Change the Name of your recipe" class="col - 8 mx-auto" id="titleUpdate">
+                   <input type="text" name="recipe[description]" placeholder="Change the description" class="col - 8 mx-auto" id="descriptionUpdate">
+                   <input type="text" name="recipe[id]" placeholder="ID number" class="mx-auto" id="taskId">
+                   <input type="submit" class="btn btn-primary" value="Update one Recipe" id="updateTaskButton">
+                 </fieldset>
+               </form> -->
+
+               <!-- <form id="recipe-delete" hidden>
+                 <fieldset>
+                   <input type="text" name="recipe[id]" placeholder="Recipe ID" id="delete-task">
+                   <input type="submit" class="btn btn-primary" value="Delete Recipe" id="deleteButton">
+                 </fieldset>
+               </form> -->
+             </div>
+         </body>
+     </html>
