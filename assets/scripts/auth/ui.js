@@ -7,9 +7,11 @@ const signUpSuccess = data => {
   $('#message').removeClass()
   $('#message').addClass('success')
   // clears sign up information
-  $('#sign-up').trigger('reset')
+  $('#sign-up-form').trigger('reset')
   // console.log('signUpSuccess ran. Data is :', data)
-  $('#sign-up').hide()
+  window.setTimeout(function () {
+    $('#signUpModal').modal('hide')
+  }, 500)
 }
 
 const signUpFailure = data => {
@@ -17,73 +19,74 @@ const signUpFailure = data => {
   $('#message').removeClass()
   $('#message').addClass('failure')
   // clears sign up information
-  $('#sign-up').trigger('reset')
+  $('#sign-up-form').trigger('reset')
   // console.error('signUpFailure ran. Error is :', error)
 }
 
 const signInSuccess = data => {
   store.user = data.user
-  $('#sign-up').hide()
-  $('#sign-in').hide()
-  // // $('#showButton').show()
-  // $('#sign-out').show()
-  // $('#change-password').show()
-  // hiding or showing elements after click
-  document.getElementById('change-password').hidden = false
-  // document.getElementById('my-to-dos').hidden = false
-  // document.getElementById('todo_list-create').hidden = false
-  // document.getElementById('todo_list-update').hidden = false
-  // document.getElementById('todo_list-index').hidden = false
-  // document.getElementById('todo_list-delete').hidden = false
-  document.getElementById('sign-out').hidden = false
-  // document.getElementById('showButton').hidden = false
-  // document.getElementById('deleteButton').hidden = false
-  $('#message').text('You signed in! Create some Recipes!')
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  // console.log('signInSuccess ran. Data is :', data)
-  $('#sign-in').trigger('reset')
+  store.userSignedIn = true
+  $('#sign-up-btn').hide()
+  $('#sign-in-btn').hide()
+  $('#sign-out-btn').show()
+  $('#password-btn').show()
+  $('#message2').text('Signed In Successfully')
+  $('#message2').removeClass()
+  $('#message2').addClass('success')
+  $('#sign-in-form').trigger('reset')
+  window.setTimeout(function () {
+    $('#signInModal').modal('hide')
+  }, 500)
 }
 
 const signInFailure = data => {
-  $('#message').text('Error on sign in')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  $('#sign-in').trigger('reset')
+  $('#message2').text('Error on SignIn')
+  $('#message2').removeClass()
+  $('#message2').addClass('failure')
+  $('#sign-in-form').trigger('reset')
   // console.error('signInFailure ran. Error is :', error)
 }
 
 const changePasswordSuccess = data => {
-  $('#message').text('You changed your password!')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message4').text('You changed your password!')
+  $('#message4').removeClass()
+  $('#message4').addClass('success')
+  $('#change-password-form').trigger('reset')
   // console.log('changePasswordSuccess ran. Data is :', data)
-  $('#change-password').trigger('reset')
+  // $('#changePasswordModal').modal('hide')
+  window.setTimeout(function () {
+    $('#changePasswordModal').modal('hide')
+  }, 500)
 }
 
 const changePasswordFailure = data => {
-  $('#message').text('Error on password change')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  // console.error('changePasswordFailure ran. Error is :', error)
-  $('#change-password').trigger('reset')
+  $('#message4').text('Error on Change Password')
+  $('#message4').removeClass()
+  $('#message4').addClass('failure')
+  $('#change-password-form').trigger('reset')
 }
 
 const signOutSuccess = data => {
-  $('#message').text('Bye now!')
+  store.userSignedIn = false
+  $('#sign-up-btn').show()
+  $('#sign-in-btn').show()
+  $('#sign-out-btn').hide()
+  $('#password-btn').hide()
+  $('#message3').text('Bye now!')
   store.user = null
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  // console.log('signOutSuccess ran. Data is :', data)
-  $('#sign-out').trigger('reset')
+  $('#message3').removeClass()
+  $('#message3').addClass('success')
+  $('#message2').empty()
+  window.setTimeout(function () {
+    $('#signOutModal').modal('hide')
+  }, 500)
 }
 
 const signOutFailure = data => {
-  $('#message').text('Error on sign out')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  // console.error('signOutFailure ran. Error is :', error)
-  $('#sign-out').trigger('reset')
+  store.user = null
+  $('#message3').text('Error on SignOut')
+  $('#message3').removeClass()
+  $('#message3').addClass('failure')
 }
 
 // const recipeCreateSuccess = data => {

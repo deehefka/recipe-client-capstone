@@ -14,47 +14,140 @@
     <body>
       <h1>Recipe Cards</h1>
 
-           <!-- sign-up button - from class notes/lecture-->
-           <form id="sign-up" class="border">
-                    <fieldset>
-                      <legend>Sign up!</legend>
-                      <input type="text" name="credentials[email]" placeholder="Email">
-                      <input type="password" name="credentials[password]" placeholder="Password" >
-                      <input type="password" name="credentials[password_confirmation]"
-                             placeholder="Confirm Password">
-                      <input type="submit" value="Sign up!"/>
-                    </fieldset>
-           </form>
+      <!-- Header Buttons -->
+        <header>
+          <button type="button" id="sign-up-btn" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign
+            Up</span></button>
+          <button type="button" id="sign-in-btn" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">Sign
+            In</span></button>
+          <button type="button" id="sign-out-btn" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal">Sign
+            Out</span></button>
+          <button type="button" id="password-btn" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">Change
+            Password</span></button>
+            <!-- <button type="button" id="showModal" class="btn btn-primary" data-toggle="modal" data-target="#showButtonModal">Show My Bucket
+            List</span></button>
+            <button type="button" id="showEditModal" class="btn btn-primary" data-toggle="modal" data-target="#showEditButtonModal">Edit
+              My Bucket List</span></button> -->
+        </header>
 
-           <!-- sign-in button - from class notes/lecture-->
-           <form id="sign-in" class="border">
+<!-- Sign up Button -->
+                <div>
+                   <div class="modal fade" id="signUpModal">
+                     <div class="modal-dialog">
+                       <div class="modal-content">
+                         <div class="modal-header">
+                           <h5 class="modal-title" id="exampleModalLabel"></h5>
+                         </div>
+                         <div class="modal-body">
+                           <form id='sign-up-form'>
+
+                             <fieldset>
+                               <legend>Sign Up</legend>
+                               <input class="form-control" type='text' name='credentials[email]' placeholder='Email' />
+                               <input class="form-control" type='password' name='credentials[password]' placeholder='Password' />
+                               <input class="form-control" type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
+                               <button type="submit" class="btn btn-primary" name="submit" value="Sign Up">Sign Up</button>
+                           </fieldset>
+                         </form>
+                 <p id='message'></p>
+               </div>
+               <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                 <button type="button" class="btn btn-primary" id="sign-up">SAVE</button>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+       <!-- Sign in Button -->
+     <div>
+       <div class="modal fade" id="signInModal">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel"></h5>
+             </div>
+             <div class="modal-body">
+               <div>
+                 <a class='borderTwo' href='#exampleTwo'></a>
+               </div>
+               <div class='borderTwo-content' id='exampleTwo'>
+                 <form id='sign-in-form' class='borderOne'>
+                   <div>
+                     <input type='text' name='credentials[email]' placeholder='Email' />
+                     <input type='password' name='credentials[password]' placeholder='Password' />
+                     <input type='submit' id='sign-in' value='Sign In !' />
+                   </div>
+                 </form>
+                 <p id='message2'></p>
+               </div>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+<!-- Change Password -->
+     <div>
+       <div class="modal fade" id="changePasswordModal">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel"></h5>
+             </div>
+             <div class="modal-body">
+               <div>
+                 <a class='borderThree' href='#exampleThree'></a>
+               </div>
+                 <form id='change-password-form'>
                    <fieldset>
-                     <legend> Sign In!</legend>
-                     <input type="text" name="credentials[email]" placeholder="Email" />
-                     <input type="password" name="credentials[password]" placeholder="Password">
-                     <input type="submit" value="Sign In!">
+                     <legend>Change Password</legend>
+                     <div class='borderThree-content' id='exampleThree'>
+                       <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" />
+                       <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" />
+                       <button type="submit" class="btn btn-primary" name="submit" value="Change Password">Change Password</button>
+                     </div>
                    </fieldset>
-           </form>
+                 </form>
+                 <p id='message4'></p>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+<!-- Sign out Button -->
+     <div>
+       <div class="modal fade" id="signOutModal">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel"></h5>
+             </div>
+             <div class="modal-body">
+               <form id='sign-out-form' class='border'>
+                 <fieldset>
+                 <div>
+                   <input type="submit" value="Sign out" />
+                 </div>
+               </fieldset>
+               </form>
+               <p id='message3'></p>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
 
-           <!-- change pass button - from class notes/lecture-->
-           <form id="change-password" class="border" hidden>
-              <fieldset>
-                <legend>Change password!</legend>
-                <input type="password" name="passwords[old]" placeholder="Old password">
-                <input type="password" name="passwords[new]" placeholder="New password">
-                <input type="submit" value="Change password!">
-              </fieldset>
-           </form>
-
-           <!-- sign-out button - from class notes/lecture-->
-           <form id="sign-out" class="border" hidden>
-                   <fieldset>
-                     <legend> Sign Out!</legend>
-                     <input type="submit" value="Sign Out!">
-                   </fieldset>
-           </form>
-
-           <h3 id="message"></h3>
 
            <!-- <div class="container">
              <form id="recipe-index" hidden>
