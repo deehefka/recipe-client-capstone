@@ -34,6 +34,13 @@ const signInSuccess = data => {
   $('#message2').removeClass()
   $('#message2').addClass('success')
   $('#sign-in-form').trigger('reset')
+  // document.getElementById('my-to-dos').hidden = false
+  document.getElementById('recipe-create').hidden = false
+  document.getElementById('recipe-update').hidden = false
+  document.getElementById('recipe-index').hidden = false
+  document.getElementById('recipe-delete').hidden = false
+  document.getElementById('showButton').hidden = false
+  document.getElementById('deleteButton').hidden = false
   window.setTimeout(function () {
     $('#signInModal').modal('hide')
   }, 500)
@@ -72,11 +79,18 @@ const signOutSuccess = data => {
   $('#sign-in-btn').show()
   $('#sign-out-btn').hide()
   $('#password-btn').hide()
-  $('#message3').text('Bye now!')
+  $('#message5').text('Bye now!')
   store.user = null
   $('#message3').removeClass()
   $('#message3').addClass('success')
-  $('#message2').empty()
+  $('#message3').empty()
+  document.getElementById('output').hidden = true
+  document.getElementById('recipe-create').hidden = true
+  document.getElementById('recipe-update').hidden = true
+  document.getElementById('recipe-index').hidden = true
+  document.getElementById('recipe-delete').hidden = true
+  document.getElementById('showButton').hidden = true
+  document.getElementById('deleteButton').hidden = true
   window.setTimeout(function () {
     $('#signOutModal').modal('hide')
   }, 500)
@@ -89,22 +103,22 @@ const signOutFailure = data => {
   $('#message3').addClass('failure')
 }
 
-// const recipeCreateSuccess = data => {
-//   store.todo_lists = data.todo_lists
-//   $('#message').text('You created an item for your recipe!')
-//   // document.getElementById('todo-item').hidden = false
-//   $('#message').removeClass()
-//   $('#message').addClass('success')
-//   $('#recipe-create').trigger('reset')
-// }
+const recipeCreateSuccess = data => {
+  store.recipes = data.recipes
+  $('#message5').text('You created an item for your recipe!')
+  // document.getElementById('todo-item').hidden = false
+  $('#message5').removeClass()
+  $('#message5').addClass('success')
+  $('#recipe-create').trigger('reset')
+}
 
-// const recipeCreateFailure = data => {
-//   $('#message').text('Error on recipe creation')
-//   $('#message').removeClass()
-//   $('#message').addClass('failure')
-//   // console.error('signUpFailure ran. Error is :', error)
-//   $('#recipe-create').trigger('reset')
-// }
+const recipeCreateFailure = data => {
+  $('#message5').text('Error on recipe creation')
+  $('#message5').removeClass()
+  $('#message5').addClass('failure')
+  // console.error('signUpFailure ran. Error is :', error)
+  $('#recipe-create').trigger('reset')
+}
 
 // const recipeShowSuccess = data => {
 //   // store.schemes = data.schemes
@@ -119,65 +133,65 @@ const signOutFailure = data => {
 //   $('#message').addClass('failure')
 // }
 
-// const recipeDeleteSuccess = data => {
-//   $('#message').text('You deleted a recipe!')
-//   $('#message').removeClass()
-//   $('#message').addClass('success')
-//   $('#recipe-delete').trigger('reset')
-// }
+const recipeDeleteSuccess = data => {
+  $('#message5').text('You deleted a recipe!')
+  $('#message5').removeClass()
+  $('#message5').addClass('success')
+  $('#recipe-delete').trigger('reset')
+}
 
-// const recipeDeleteFailure = data => {
-//   $('#message').text('Failure on recipe delete')
-//   $('#message').removeClass()
-//   $('#message').addClass('failure')
-//   $('#recipe-delete').trigger('reset')
-// }
+const recipeDeleteFailure = data => {
+  $('#message5').text('Failure on recipe delete')
+  $('#message5').removeClass()
+  $('#message5').addClass('failure')
+  $('#recipe-delete').trigger('reset')
+}
 
-// const recipeUpdateSuccess = data => {
-//   // store.todo_lists = data.todo_lists
-//   $('#message').text('You updated a recipe!')
-//   $('#message').removeClass()
-//   $('#message').addClass('success')
-//   $('#recipe-update').trigger('reset')
-// }
+const recipeUpdateSuccess = data => {
+  // store.todo_lists = data.todo_lists
+  $('#message5').text('You updated a recipe!')
+  $('#message5').removeClass()
+  $('#message5').addClass('success')
+  $('#recipe-update').trigger('reset')
+}
 
-// const recipeUpdateFailure = data => {
-//   $('#message').text('Error on recipe update')
-//   $('#message').removeClass()
-//   $('#message').addClass('failure')
-//   // console.error('signUpFailure ran. Error is :', error)
-//   $('#recipe-update').trigger('reset')
-// }
+const recipeUpdateFailure = data => {
+  $('#message5').text('Error on recipe update')
+  $('#message5').removeClass()
+  $('#message5').addClass('failure')
+  // console.error('signUpFailure ran. Error is :', error)
+  $('#recipe-update').trigger('reset')
+}
 
-// const recipeIndexSuccess = data => {
-//   store.recipes = data.recipes
-//   // display tasks on show all click
-//   document.getElementById('output').hidden = false
-//   $('#message').text('Here are all your recipes!')
-//   // empties output
-//   $('#output').empty()
-//   // function - for each todo list item
-//   data.recipes.forEach(recipe => {
-//     // add to output
-//     $('#output').append(
-//       // formatting how the tasks show to the user
-//       `<div id=${recipe.id}> <p> ${recipe.id} </p> </div>`)
-//     // calling the keys and their values and printing them out (user input)
-//     for (const key in recipe) {
-//       if (key !== 'id') {
-//         $(`#${recipe.id}`).append(`<p>${key}: ${recipe[key]}</p>`)
-//       }
-//     }
-//   })
-//   $('#message').removeClass()
-//   $('#message').addClass('success')
-// }
+const recipeIndexSuccess = data => {
+  store.recipes = data.recipes
+  // display tasks on show all click
+  document.getElementById('output').hidden = false
+  $('#message5').text('Here are all your recipes!')
+  // empties output
+  $('#output').empty()
+  // function - for each todo list item
+  data.recipes.forEach(recipe => {
+    // add to output
+    $('#output').append(
+      // formatting how the tasks show to the user
+      `<div id=${recipe.id}> <p> ${recipe.id} </p> </div>`)
+    // calling the keys and their values and printing them out (user input)
+    for (const key in recipe) {
+      if (key !== 'id') {
+        $(`#${recipe.id}`).append(`<p>${key}: ${recipe[key]}</p>`)
+      }
+    }
+  })
+  $('#message5').removeClass()
+  $('#message5').addClass('success')
+}
 
-// const recipeIndexFailure = data => {
-//   $('#message').text('Failure on recipe index')
-//   $('#message').removeClass()
-//   $('#message').addClass('failure')
-// }
+const recipeIndexFailure = data => {
+  $('#message5').text('Failure on recipe index')
+  $('#message5').removeClass()
+  $('#message5').addClass('failure')
+}
 
 module.exports = {
   signUpSuccess,
@@ -187,15 +201,15 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
-  // recipeCreateSuccess,
-  // recipeCreateFailure,
+  signOutFailure,
+  recipeCreateSuccess,
+  recipeCreateFailure,
   // // recipeShowSuccess,
   // // recipeShowFailure,
-  // recipeDeleteSuccess,
-  // recipeDeleteFailure,
-  // recipeUpdateSuccess,
-  // recipeUpdateFailure,
-  // recipeIndexSuccess,
-  // recipeIndexFailure
+  recipeDeleteSuccess,
+  recipeDeleteFailure,
+  recipeUpdateSuccess,
+  recipeUpdateFailure,
+  recipeIndexSuccess,
+  recipeIndexFailure
 }

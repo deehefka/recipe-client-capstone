@@ -44,49 +44,51 @@ const signOut = () => {
   })
 }
 
-// const recipeCreate = data => {
-//   return $.ajax({
-//     url: config.apiUrl + '/recipes',
-//     method: 'POST',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data: data
-//   })
-// }
+const recipeCreate = data => {
+  return $.ajax({
+    url: config.apiUrl + '/recipes',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
 
 // pulled from class lectures
-// const recipeUpdate = (data, id) => {
-//   return $.ajax({
-//     url: config.apiUrl + '/recipes/' + id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
-// // pulled from class lectures
-// const recipeDelete = id => {
-//   return $.ajax({
-//     url: config.apiUrl + '/recipes/' + id,
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
-// // pulled from class lectures
-// const recipeIndex = () => {
-//   return $.ajax({
-//     url: config.apiUrl + '/recipes',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//     // data: data
-//   })
-// }
+const recipeUpdate = (data, id) => {
+  return $.ajax({
+    url: config.apiUrl + '/recipes/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+// pulled from class lectures
+const recipeDelete = id => {
+  return $.ajax({
+    url: config.apiUrl + '/recipes/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+// pulled from class lectures
+const recipeIndex = () => {
+  return $.ajax({
+    url: config.apiUrl + '/recipes',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+    // data
+  })
+}
 
 // const recipeShow = id => {
 //   return $.ajax({
@@ -103,10 +105,10 @@ module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
-  // recipeCreate,
-  // recipeUpdate,
-  // recipeDelete,
-  // recipeIndex
+  signOut,
+  recipeCreate,
+  recipeUpdate,
+  recipeDelete,
+  recipeIndex
   // recipeShow
 }
