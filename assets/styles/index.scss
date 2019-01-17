@@ -56,12 +56,17 @@
 }
 
 #message5 {
-  color: black;
+  color: white;
+}
+
+#message6 {
+  color: white;
 }
 
 body {
+  background: url('https://raw.githubusercontent.com/deehefka/recipe-client-capstone/master/Recipe_Card.jpg') no-repeat 25% 25% fixed;
   background-color: #ccc;
-  // background-repeat: no-repeat;
+// background-repeat: no-repeat;
   // background-position: fixed;
   //background-size: cover;
 }
@@ -71,7 +76,7 @@ body {
   background-color: rgba(189, 233, 249, 0.7);
   border-style: solid;
   padding-bottom: 1px;
-  margin: 30px;
+  //margin: 30px;
 }
 
 // ul {

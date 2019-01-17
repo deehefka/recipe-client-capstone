@@ -30,6 +30,9 @@ const signInSuccess = data => {
   $('#sign-in-btn').hide()
   $('#sign-out-btn').show()
   $('#password-btn').show()
+  $('#showModal').show()
+  $('#showEditModal').show()
+  // $('#showEditModal').show()
   $('#message2').text('Signed In Successfully')
   $('#message2').removeClass()
   $('#message2').addClass('success')
@@ -105,17 +108,17 @@ const signOutFailure = data => {
 
 const recipeCreateSuccess = data => {
   store.recipes = data.recipes
-  $('#message5').text('You created an item for your recipe!')
+  $('#message6').text('You created an item for your recipe!')
   // document.getElementById('todo-item').hidden = false
-  $('#message5').removeClass()
-  $('#message5').addClass('success')
+  $('#message6').removeClass()
+  $('#message6').addClass('success')
   $('#recipe-create').trigger('reset')
 }
 
 const recipeCreateFailure = data => {
-  $('#message5').text('Error on recipe creation')
-  $('#message5').removeClass()
-  $('#message5').addClass('failure')
+  $('#message6').text('Error on recipe creation')
+  $('#message6').removeClass()
+  $('#message6').addClass('failure')
   // console.error('signUpFailure ran. Error is :', error)
   $('#recipe-create').trigger('reset')
 }
@@ -134,31 +137,31 @@ const recipeCreateFailure = data => {
 // }
 
 const recipeDeleteSuccess = data => {
-  $('#message5').text('You deleted a recipe!')
-  $('#message5').removeClass()
-  $('#message5').addClass('success')
+  $('#message6').text('You deleted a recipe!')
+  $('#message6').removeClass()
+  $('#message6').addClass('success')
   $('#recipe-delete').trigger('reset')
 }
 
 const recipeDeleteFailure = data => {
-  $('#message5').text('Failure on recipe delete')
-  $('#message5').removeClass()
-  $('#message5').addClass('failure')
+  $('#message6').text('Failure on recipe delete')
+  $('#message6').removeClass()
+  $('#message6').addClass('failure')
   $('#recipe-delete').trigger('reset')
 }
 
 const recipeUpdateSuccess = data => {
   // store.todo_lists = data.todo_lists
-  $('#message5').text('You updated a recipe!')
-  $('#message5').removeClass()
-  $('#message5').addClass('success')
+  $('#message6').text('You updated a recipe!')
+  $('#message6').removeClass()
+  $('#message6').addClass('success')
   $('#recipe-update').trigger('reset')
 }
 
 const recipeUpdateFailure = data => {
-  $('#message5').text('Error on recipe update')
-  $('#message5').removeClass()
-  $('#message5').addClass('failure')
+  $('#message6').text('Error on recipe update')
+  $('#message6').removeClass()
+  $('#message6').addClass('failure')
   // console.error('signUpFailure ran. Error is :', error)
   $('#recipe-update').trigger('reset')
 }

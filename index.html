@@ -20,28 +20,20 @@
           <span class="navbar-toggler-icon"></span>
         </button> -->
         <div class="container-fluid">
-          <ul class="nav navbar-nav navbar-right">
-
-            <li>
+          <span class="nav navbar-nav navbar-right">
               <a class="navbar-text" href="#"></a> <button type="button" id="sign-up-btn" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
                 Sign Up</button>
-            </li>
-
-            <li>
               <a class="navbar-text" href="#"></a> <button type="button" id="sign-in-btn" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
                 Sign In</button>
-            </li>
-
-            <li>
               <a class="navbar-text" href="#"></a> <button type="button" id="sign-out-btn" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal">
                 Sign Out</button>
-            </li>
-
-            <li>
               <a class="navbar-text" href="#"></a> <button type="button" id="password-btn" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
                 Change Password</button>
-            </li>
-          </ul>
+              <a class="navbar-text" href="#"></a> <button type="button" id="showModal" class="btn btn-primary" data-toggle="modal" data-target="#showButtonModal">
+                Show Recipes</button>
+              <a class="navbar-text" href="#"></a><button type="button" id="showEditModal" class="btn btn-primary" data-toggle="modal" data-target="#showEditButtonModal">
+                Edit My Recipes</button>
+          </span>
         </div>
       </nav>
 
@@ -165,54 +157,83 @@
        </div>
      </div>
 
-           <h3 id="message5"></h3>
+<!-- Show Recipe Modal -->
+<div>
+  <div class="modal fade" id="showButtonModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p id='message5'></p>
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+        </div>
 
+      <div class="form">
+         <div class="container">
+           <form id="recipe-index" hidden>
+             <div id="output"></div>
+             <input type="submit" class="btn btn-primary" value="Show All Recipes" id="showButton">
+             <p id="message5"></p>
+           </form>
+
+           <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+<!-- Edit Recipe Modal -->
+ <div class="modal fade" id="showEditButtonModal">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <p id='message6'></p>
+           <h5 class="modal-title" id="exampleModalLabel"></h5>
+         </div>
+
+         <div class="form">
            <div class="container">
-             <form id="recipe-index" hidden>
-               <fieldset>
-                   <input type="submit" class="btn btn-primary" value="Show all Recipes" id="showButton">
-               </fieldset>
-             </form>
 
-             <h2 id="recipes" class="text-center" hidden>My Recipes</h2>
-                 <form id="recipe-create" class="col-8 mx-auto" hidden>
+             <h2 id="my-recipes" class="text-center"></h2>
+                 <form id="recipe-create">
                  <div id="output" hidden></div>
                  <fieldset>
                    <input type="text" name="recipe[title]" placeholder="Name of Recipe" class="col - 8 mx-auto" id="title">
-                   <input type="text" name="recipe[description]" placeholder="Recipe Description"class="col - 8 mx-auto" id="description">
+                   <input type="text" name="recipe[description]" placeholder="Recipe Description" class="col - 8 mx-auto" id="description">
                    <input type="text" name="recipe[notes]" placeholder="Any important notes?" class="col - 8 mx-auto" id="notes">
                    <input type="text" name="recipe[ingredient_list]" placeholder="Ingredients" class="col - 8 mx-auto" id="ingredient_list">
-                   <input type="text" name="recipe[instruction_list]" placeholder="Instructions" class="col - 8 mx-auto" id="instruction_list">
+                   <input name="recipe[instruction_list]" placeholder="Instructions" class="col - 8 mx-auto" id="instruction_list">
                    <input type="submit" class="btn btn-primary" value="Create a Recipe" id="addTaskButton">
                  </fieldset>
                </form>
 
-               <!-- <form id="recipe-show" hidden>
-                 <fieldset>
-                   <input type="text" name="recipe[id]" placeholder="Recipe ID" id="show-recipe[id]">
-                   <input type="submit" class="btn btn-primary" value="Show one Recipe">
-                 </fieldset>
-               </form> -->
-
-               <form id="recipe-update" hidden>
+               <form id="recipe-update">
                  <fieldset>
                    <input type="text" name="recipe[title]" placeholder="Name of Recipe" class="col - 8 mx-auto" id="titleUpdate">
                    <input type="text" name="recipe[description]" placeholder="Recipe Description"class="col - 8 mx-auto" id="descriptionUpdate">
                    <input type="text" name="recipe[notes]" placeholder="Any important notes?" class="col - 8 mx-auto" id="notesUpdate">
                    <input type="text" name="recipe[ingredient_list]" placeholder="Ingredients" class="col - 8 mx-auto" id="ingredient_listUpdate">
                    <input type="text" name="recipe[instruction_list]" placeholder="Instructions" class="col - 8 mx-auto" id="instruction_listUpdate">
-                   <input type="text" name="recipe[id]" placeholder="ID number" class="mx-auto" id="taskId">
+                   <input type="text" name="recipe[id]" placeholder="ID number" class="col - 8 mx-auto" id="taskId">
                    <input type="submit" class="btn btn-primary" value="Update one Recipe" id="updateTaskButton">
                  </fieldset>
                </form>
 
-               <form id="recipe-delete" hidden>
+               <form id="recipe-delete">
                  <fieldset>
-                   <input type="text" name="recipe[id]" placeholder="Recipe ID" id="delete-task">
+                   <input type="text" name="recipe[id]" placeholder="Recipe ID" id="delete-task" class="col - 8 mx-auto">
                    <input type="submit" class="btn btn-primary" value="Delete Recipe" id="deleteButton">
                  </fieldset>
                </form>
-
-             </div>
+           </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+         </div>
+       </div>
+     </div>
+   </div>
          </body>
      </html>
