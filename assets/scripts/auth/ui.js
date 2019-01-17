@@ -82,7 +82,9 @@ const signOutSuccess = data => {
   $('#sign-in-btn').show()
   $('#sign-out-btn').hide()
   $('#password-btn').hide()
-  $('#message5').text('Bye now!')
+  $('#sign-out-btn').hide()
+  $('#password-btn').hide()
+  //$('#message5').text('Bye now!')
   store.user = null
   $('#message3').removeClass()
   $('#message3').addClass('success')
