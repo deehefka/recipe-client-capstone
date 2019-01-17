@@ -26,7 +26,7 @@ ERD: https://imgur.com/a/9IwF5rf
 
 WireFrame: https://imgur.com/a/cYPABeF
 
-Screenshot of App:
+Screenshot of App: https://imgur.com/a/Vgy3Vqo
 
 Local installation: 1: clone my repo 2: npm install 3: grunt serve
 
