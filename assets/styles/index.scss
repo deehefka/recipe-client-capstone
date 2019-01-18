@@ -60,10 +60,12 @@
 }
 
 body {
+  background: url('https://raw.githubusercontent.com/deehefka/recipe-client-capstone/master/public/Recipe_Card.jpg') no-repeat 5% 5% fixed;
   background-color: #ccc;
-  // background-repeat: no-repeat;
-  // background-position: fixed;
-  //background-size: cover;
+  //height: 10%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #output {
