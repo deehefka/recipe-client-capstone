@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+  <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <a class="navbar-brand" href="#">Recipe Cards App</a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+        <div class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+
+            <li>
+              <a class="navbar-text" href="#"></a> <button type="button" id="sign-up-btn" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
+                Sign Up</button>
+            </li>
+
+            <li>
+              <a class="navbar-text" href="#"></a> <button type="button" id="sign-in-btn" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
+                Sign In</button>
+            </li>
+
+            <li>
+              <a class="navbar-text" href="#"></a> <button type="button" id="sign-out-btn" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal">
+                Sign Out</button>
+            </li>
+
+            <li>
+              <a class="navbar-text" href="#"></a> <button type="button" id="password-btn" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
+                Change Password</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+<!-- Sign up Button -->
+                <div>
+                   <div class="modal fade" id="signUpModal">
+                     <div class="modal-dialog">
+                       <div class="modal-content">
+                         <div class="modal-header">
+                           <h5 class="modal-title" id="exampleModalLabel"></h5>
+                         </div>
+                         <div class="modal-body">
+                           <form id='sign-up-form'>
+
+                             <fieldset>
+                               <legend>Sign Up</legend>
+                               <input class="form-control" type='text' name='credentials[email]' placeholder='Email' />
+                               <input class="form-control" type='password' name='credentials[password]' placeholder='Password' />
+                               <input class="form-control" type='password' name='credentials[password_confirmation]' placeholder='Confirm Password' />
+                               <button type="submit" class="btn btn-primary" name="submit" value="Sign Up">Sign Up</button>
+                           </fieldset>
+                         </form>
+                 <p id='message'></p>
+               </div>
+               <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                 <button type="button" class="btn btn-primary" id="sign-up">SAVE</button>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+<!-- Sign in Button -->
+     <div>
+       <div class="modal fade" id="signInModal">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel"></h5>
+             </div>
+             <div class="modal-body">
+               <div>
+                 <a class='borderTwo' href='#exampleTwo'></a>
+               </div>
+               <div class='borderTwo-content' id='exampleTwo'>
+                 <form id='sign-in-form' class='borderOne'>
+                   <div>
+                     <input type='text' name='credentials[email]' placeholder='Email' />
+                     <input type='password' name='credentials[password]' placeholder='Password' />
+                     <input type='submit' id='sign-in' value='Sign In !' />
+                   </div>
+                 </form>
+                 <p id='message2'></p>
+               </div>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+<!-- Change Password -->
+     <div>
+       <div class="modal fade" id="changePasswordModal">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel"></h5>
+             </div>
+             <div class="modal-body">
+               <div>
+                 <a class='borderThree' href='#exampleThree'></a>
+               </div>
+                 <form id='change-password-form'>
+                   <fieldset>
+                     <legend>Change Password</legend>
+                     <div class='borderThree-content' id='exampleThree'>
+                       <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" />
+                       <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" />
+                       <button type="submit" class="btn btn-primary" name="submit" value="Change Password">Change Password</button>
+                     </div>
+                   </fieldset>
+                 </form>
+                 <p id='message4'></p>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+<!-- Sign out Button -->
+     <div>
+       <div class="modal fade" id="signOutModal">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel"></h5>
+             </div>
+             <div class="modal-body">
+               <form id='sign-out-form' class='border'>
+                 <fieldset>
+                 <div>
+                   <input type="submit" value="Sign out" />
+                 </div>
+               </fieldset>
+               </form>
+               <p id='message3'></p>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+           <h3 id="message5"></h3>
+
+           <div class="container">
+             <form id="recipe-index" hidden>
+               <fieldset>
+                   <input type="submit" class="btn btn-primary" value="Show all Recipes" id="showButton">
+               </fieldset>
+             </form>
+
+             <h2 id="recipes" class="text-center" hidden>My Recipes</h2>
+                 <form id="recipe-create" class="col-8 mx-auto" hidden>
+                 <div id="output" hidden></div>
+                 <fieldset>
+                   <input type="text" name="recipe[title]" placeholder="Name of Recipe" class="col - 8 mx-auto" id="title">
+                   <input type="text" name="recipe[description]" placeholder="Recipe Description"class="col - 8 mx-auto" id="description">
+                   <input type="text" name="recipe[notes]" placeholder="Any important notes?" class="col - 8 mx-auto" id="notes">
+                   <input type="text" name="recipe[ingredient_list]" placeholder="Ingredients" class="col - 8 mx-auto" id="ingredient_list">
+                   <input type="text" name="recipe[instruction_list]" placeholder="Instructions" class="col - 8 mx-auto" id="instruction_list">
+                   <input type="submit" class="btn btn-primary" value="Create a Recipe" id="addTaskButton">
+                 </fieldset>
+               </form>
+
+               <!-- <form id="recipe-show" hidden>
+                 <fieldset>
+                   <input type="text" name="recipe[id]" placeholder="Recipe ID" id="show-recipe[id]">
+                   <input type="submit" class="btn btn-primary" value="Show one Recipe">
+                 </fieldset>
+               </form> -->
+
+               <form id="recipe-update" hidden>
+                 <fieldset>
+                   <input type="text" name="recipe[title]" placeholder="Name of Recipe" class="col - 8 mx-auto" id="titleUpdate">
+                   <input type="text" name="recipe[description]" placeholder="Recipe Description"class="col - 8 mx-auto" id="descriptionUpdate">
+                   <input type="text" name="recipe[notes]" placeholder="Any important notes?" class="col - 8 mx-auto" id="notesUpdate">
+                   <input type="text" name="recipe[ingredient_list]" placeholder="Ingredients" class="col - 8 mx-auto" id="ingredient_listUpdate">
+                   <input type="text" name="recipe[instruction_list]" placeholder="Instructions" class="col - 8 mx-auto" id="instruction_listUpdate">
+                   <input type="text" name="recipe[id]" placeholder="ID number" class="mx-auto" id="taskId">
+                   <input type="submit" class="btn btn-primary" value="Update one Recipe" id="updateTaskButton">
+                 </fieldset>
+               </form>
+
+               <form id="recipe-delete" hidden>
+                 <fieldset>
+                   <input type="text" name="recipe[id]" placeholder="Recipe ID" id="delete-task">
+                   <input type="submit" class="btn btn-primary" value="Delete Recipe" id="deleteButton">
+                 </fieldset>
+               </form>
+
+             </div>
+         </body>
+     </html>
